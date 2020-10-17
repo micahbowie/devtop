@@ -42,6 +42,9 @@ gem "bulma-rails", '~> 0.6.1'
 #Simple form
 gem 'simple_form', '~> 3.5'
 
+#secure password
+gem 'bcrypt'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,7 +63,7 @@ group :development do
 
   #Guard::LiveReload automatically reloads your browser when 'view' files are modified
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
-end 
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
