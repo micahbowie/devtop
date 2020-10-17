@@ -33,18 +33,34 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#Make errors beter looking
+gem 'better_errors', '~> 2.4'
+
+# Bulma CSS framework
+gem "bulma-rails", '~> 0.6.1'
+
+#Simple form
+gem 'simple_form', '~> 3.5'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-end
+  # Guard is a command line tool to easily handle events on fole system modifications
+  gem 'guard', '~> 2.14', '>=2.14.1'
+
+  #Guard::LiveReload automatically reloads your browser when 'view' files are modified
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+end 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
