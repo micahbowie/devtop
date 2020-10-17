@@ -1,5 +1,3 @@
-<h1 class='title'>Edit Note</h1>
-
 <div class="section">
   <%= simple_form_for @note do |x| %>
   <div class="field">
@@ -12,6 +10,6 @@
       <%= x.input :content, input_html: { class: 'textarea'}, wrapper: false, label_html: { class: 'label'} %>
     </div>
   </div>
-  <%= x.button :submit, class: "button is-primary" %>
+  <%= x.button :submit, 'Save note', class: "button is-primary" %>
   <% end %>
 </div>

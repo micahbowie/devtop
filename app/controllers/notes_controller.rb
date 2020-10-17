@@ -25,10 +25,24 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
-    render 'edit'
+
+    if @note.update(note_params)
+      redirect_to @note
+    else
+      render 'edit'
+    end
+
   end
 
   def edit
+    @note = Note.find(params[:id])
+  end
+
+  def destroy
+    @note = Note.find(params[:id])
+    @note.destroy
+
+    redirect_to notes_path 
   end
 
 

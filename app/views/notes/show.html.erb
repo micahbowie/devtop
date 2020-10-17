@@ -7,4 +7,7 @@
       <%= @note.content%>
     </div>
   </div>
+    <%= link_to "Edit", edit_note_path(@note), class:"button" %>
+    <%= link_to "Delete", note_path(@note), method: :delete, data: {confirm: "Aare you sure?"}, class: "button is-danger" %>
+
 </section>
