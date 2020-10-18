@@ -1,0 +1,3 @@
+-set session when user logs in
+-set session and sign in after register
+-
