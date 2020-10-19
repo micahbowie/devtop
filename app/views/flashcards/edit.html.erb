@@ -1,0 +1,11 @@
+<h1>Edit Flashcard</h1>
+
+<%= form_tag(@card,  method: 'patch') do %>
+  <p>
+    <%= label_tag "Front:" %>
+    <%= text_area_tag "front" %>
+    <%= label_tag "Back:" %>
+    <%= text_area_tag "back" %>
+  </p>
+  <%= submit_tag "Save" %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Your Flashcards</h1>
+  <%= @card.front %>
+  <br>
+  <%= @card.back %>
+
+  <%= link_to "Edit", edit_flashcard_path(@card), class:"button" %>
+  <%= link_to "Delete", flashcard_path(@card), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>

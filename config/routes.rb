@@ -14,4 +14,9 @@ Rails.application.routes.draw do
   #notes routes
   resources :notes
   root "note#index "
+
+  #flashcard routes
+  resources :flashcards
+  post '/savecard', to: 'flashcards#create'
+
 end

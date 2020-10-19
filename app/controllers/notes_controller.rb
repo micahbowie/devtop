@@ -1,15 +1,18 @@
 class NotesController < ApplicationController
 
   def index
+    redirect_if_not_logged_in
     @notes = Note.all.order("created_at DESC")
   end
 
   def new
+    redirect_if_not_logged_in
     @note = Note.new
 
   end
 
   def create
+    redirect_if_not_logged_in
     @note = Note.new(note_params)
 
     if @note.save
@@ -20,10 +23,12 @@ class NotesController < ApplicationController
   end
 
   def show
+    redirect_if_not_logged_in
     @note = Note.find(params[:id])
   end
 
   def update
+    redirect_if_not_logged_in
     @note = Note.find(params[:id])
 
     if @note.update(note_params)
@@ -35,6 +40,7 @@ class NotesController < ApplicationController
   end
 
   def edit
+    redirect_if_not_logged_in
     @note = Note.find(params[:id])
   end
 
@@ -42,7 +48,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
 
-    redirect_to notes_path 
+    redirect_to notes_path
   end
 
 

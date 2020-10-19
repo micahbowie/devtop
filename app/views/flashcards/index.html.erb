@@ -1,0 +1,11 @@
+<h1>All your Flashcards!</h1>
+
+
+<% @cards.each do |card| %>
+<a href="/flashcards/<%= card.id %>">
+  <div>
+    <p> <%= card.front %> </p>
+    <p> <%= card.back %> </p>
+  </div>
+  </a>
+  <% end %>

@@ -1,3 +1,6 @@
--set session when user logs in
--set session and sign in after register
--
+-make root route
+-fix login
+-make add redirect if not logged in to flashcards
+-fix flashcard edit so it prefills
+-make model associations
+-make post save user_id 
