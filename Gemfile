@@ -35,16 +35,14 @@ gem 'jbuilder', '~> 2.5'
 
 #Make errors beter looking
 gem 'better_errors', '~> 2.4'
-
 # Bulma CSS framework
 gem "bulma-rails", '~> 0.6.1'
-
 #Simple form
 gem 'simple_form', '~> 3.5'
-
 #secure password
 gem 'bcrypt'
-
+#Pry
+gem 'pry', '~> 0.10.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:id] = @user.id
-      redirect_to notes_path
+      redirect_to dashbaords_path
     else
       render :new
     end

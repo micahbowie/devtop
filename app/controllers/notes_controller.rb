@@ -14,11 +14,13 @@ class NotesController < ApplicationController
   def create
     redirect_if_not_logged_in
     @note = Note.new(note_params)
+    # @note.user_id = User.find_by(:username => session[:username]).id
 
     if @note.save
       redirect_to @note
     else
       render 'new'
+      # raise "it worked".inspect
     end
   end
 

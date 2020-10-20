@@ -7,8 +7,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    login(params[:username], params[:password])
-    redirect_to(notes_path) and return
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:username] = user.username
+      redirect_to dashboard_path
+    else
+      redirect_to login_path
+    end
     # raise "it worked".inspect
   end
 
@@ -17,17 +22,5 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
-  private
-
-  def login(username, password)
-    @user = User.find_by(:username => username)
-
-    if @user && @user.authenticate(password)
-      session[:id] = @user.id
-      # raise "kinda worked".inspect
-    else
-      render 'new'
-    end
-  end
 
 end

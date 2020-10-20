@@ -1,6 +1,5 @@
--make root route
--fix login
--make add redirect if not logged in to flashcards
 -fix flashcard edit so it prefills
 -make model associations
--make post save user_id 
+-make post save user_id
+-check note database. see why it is not saving
+-add flash errors in program
