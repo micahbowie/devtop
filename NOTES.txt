@@ -42,7 +42,7 @@ id | user_id | front | back |
 
 questions
 
-id | user_id | title | question_content |
+id | user_id | lab | question_content | question_title
 
 answers
 

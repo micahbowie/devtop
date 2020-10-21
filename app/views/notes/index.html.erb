@@ -1,9 +1,11 @@
-<h1 class='title'>Note </h1>
-
-
+<h1 class='title'><%= @user %>'s Note </h1>
+<h3><%= @greeting %></h3>
 <div class="section">
 	<div class="container">
-		<% @notes.each do |note| %>
+		<% if @current_user_notes.empty? == true %>
+      <h3><%= redirect_to error_path %></h3>
+      <% else %>
+		<% @current_user_notes.each do |note| %>
 			<div class="card">
 		  <div class="card-content">
 		    <div class="media">
@@ -16,6 +18,7 @@
 		    </div>
 		  </div>
 		</div>
+		<% end %>
 		<% end %>
 	</div>
 </div>

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if session[:id]
-      redirect_to '/notes', :notice => "Already logged in!"
+      redirect_to '/dashboard', :notice => "Already logged in!"
     end
   end
 
@@ -22,5 +22,8 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
+  def error
+
+  end
 
 end

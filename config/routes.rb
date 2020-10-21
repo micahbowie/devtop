@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#logout'
+  get '/error', to: 'sessions#error'
 
   #notes routes
   resources :notes
@@ -20,5 +21,9 @@ Rails.application.routes.draw do
 
   #dashboard routes
   get '/dashboard', to: 'dashboards#index'
+
+  #thatlab routes
+  resources :thatlabs
+  post 'savequestion', to: 'thatlabs#create'
 
 end

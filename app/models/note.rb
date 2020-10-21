@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-  belongs_to :users
-  validates :title,      presence: true
-  validates :content,      presence: true
+  belongs_to :user
+  # validates :title,      presence: true
+  # validates :content,      presence: true
 end

@@ -1,11 +1,18 @@
 <h1>All your Flashcards!</h1>
+<h3><%= @greeting %></h3>
 
-
-<% @cards.each do |card| %>
+<% if @current_user_flashcards.empty? == true %>
+  <h3><%= redirect_to error_path %></h3>
+  <% else %>
+<% @current_user_flashcards.each do |card| %>
 <a href="/flashcards/<%= card.id %>">
   <div>
     <p> <%= card.front %> </p>
+    <br>
     <p> <%= card.back %> </p>
   </div>
   </a>
+  <br>
+  <br>
+  <% end %>
   <% end %>

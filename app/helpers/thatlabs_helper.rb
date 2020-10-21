@@ -1,0 +1,2 @@
+module ThatlabsHelper
+end
