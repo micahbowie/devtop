@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboards#index'
 
   #thatlab routes
-  resources :thatlabs
+  resources :thatlabs, only: [:index]
+
+  #question routes
+  get '/questions', to: 'thatlabs#new_question'
+  get '/questions/:id', to: 'thatlabs#question_show', as: 'question'
   post 'savequestion', to: 'thatlabs#create'
 
 end

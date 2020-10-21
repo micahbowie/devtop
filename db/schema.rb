@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201018024852) do
+ActiveRecord::Schema.define(version: 20201021014930) do
 
   create_table "flashcards", force: :cascade do |t|
     t.string "front"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20201018024852) do
     t.string "title"
     t.text "content"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "lab"
+    t.string "question_content"
+    t.string "question_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
