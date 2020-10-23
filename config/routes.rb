@@ -20,14 +20,19 @@ Rails.application.routes.draw do
   post '/savecard', to: 'flashcards#create'
 
   #dashboard routes
-  get '/dashboard', to: 'dashboards#index'
+  get '/devtop', to: 'dashboards#index'
 
   #thatlab routes
   resources :thatlabs, only: [:index]
 
   #question routes
-  get '/questions', to: 'thatlabs#new_question'
-  get '/questions/:id', to: 'thatlabs#question_show', as: 'question'
-  post 'savequestion', to: 'thatlabs#create'
+  resources :questions
+  # get '/questions', to: 'thatlabs#all_questions'
+  # get '/questions/new', to: 'thatlabs#new_question'
+  # get '/questions/:id', to: 'thatlabs#question_show', as: 'question'
+  post 'savequestion', to: 'questions#create'
+
+  #answer routes
+  post 'saveanswer/:id', to: 'thatlabs#create_answer'
 
 end

@@ -1,7 +1,23 @@
-<h1>Here are previous questions you've asked:</h1>
+<strong><h1><%= @question.question_title %></h1></strong>
+<em><h2><%= @question.lab %></h2></em>
+<br>
+<br>
+<h2><%= @question.question_content %></h2>
 <br>
 <br>
 
-<h2><%= @question.question_title %></h2>
-<h2><%= @question.lab %></h2>
-<h2><%= @question.question_content %></h2>
+<%= form_tag('/saveanswer') do %>
+  <p>
+    <%= label_tag "Your answer:" %>
+    <br>
+    <%= text_area_tag "answer_content", nil, rows: 20, cols: 45 %>
+  </p>
+  <%= submit_tag "Submit" %>
+<% end %>
+
+
+<% if @answers != nil %>
+  <% @answers.each do |answer| %>
+  <%= answer.answer_content %>
+  <% end %>
+  <% end %>

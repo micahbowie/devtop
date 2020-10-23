@@ -3,7 +3,7 @@
 <div class="section">
 	<div class="container">
 		<% if @current_user_notes.empty? == true %>
-      <h3><%= redirect_to error_path %></h3>
+      <% redirect_to error_path %>
       <% else %>
 		<% @current_user_notes.each do |note| %>
 			<div class="card">
