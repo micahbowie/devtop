@@ -1,0 +1,16 @@
+<% if @questions == nil %>
+  <% redirect_to error_path %>
+  <% else %>
+  <% @questions.each do |question| %>
+  <ul>
+    <a href="/questions/<%= question.id %> "><li>
+    <strong>  <h1> <%= question.question_title %> </hl> </strong>
+      <h2> <%=question.lab %> </h2>
+      <p> <%= question.question_content %></p>
+      Asked by: <%= User.find(question.user_id).username %>
+    </li></a>
+    <br>
+    <br>
+  </ul>
+  <% end %>
+  <% end %>
