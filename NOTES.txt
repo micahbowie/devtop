@@ -46,7 +46,7 @@ id | user_id | lab | question_content | question_title
 
 answers
 
-id | user_id | question_id | answer |
+id | user_id | question_id | answer_content | lab |
 
 
 

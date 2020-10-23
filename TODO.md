@@ -3,3 +3,4 @@
 -add flash errors in program
 -add a create new note button to notes path
 -add go back to notes button on note show page
+-fix notes and flashcard index page logic "redirect_to"
