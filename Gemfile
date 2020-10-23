@@ -42,7 +42,7 @@ gem 'simple_form', '~> 3.5'
 #secure password
 gem 'bcrypt'
 #Pry
-gem 'pry', '~> 0.10.3'
+gem 'pry'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
