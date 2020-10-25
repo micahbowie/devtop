@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
-    if session[:id]
-      redirect_to '/dashboard', :notice => "Already logged in!"
+    if session[:username]
+      redirect_to '/devtop', notice: "You are already Logged in!"
     end
   end
 
@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:username] = user.username
-      redirect_to dashboard_path
+      redirect_to devtop_path
     else
-      redirect_to login_path
+      redirect_to login_path, notice: "Please try again. Your Login was not successful."
     end
     # raise "it worked".inspect
   end

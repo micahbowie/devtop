@@ -1,3 +1,7 @@
+<%= form_for "", url: questions_path, role: "search", method: :get do %>
+<%= text_field_tag :search, @search_term, placeholder: "Search..."%>
+<% end %>
+
 <% if @questions == nil %>
   <% redirect_to error_path %>
   <% else %>

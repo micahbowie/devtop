@@ -13,7 +13,7 @@ class FlashcardsController < ApplicationController
     @card.user_id = User.find_by(:username => session[:username]).id
 
     if @card.save
-      redirect_to @card
+      redirect_to @card, notice: "Take a look at your new flashcard!"
     else
       render 'new'
     end
@@ -68,7 +68,7 @@ class FlashcardsController < ApplicationController
   end
 
   def dynamic_welcome
-    greeting = ['Wow flashcards...Way to go!', 'Sshhhh Your flashcards are sleeping!', "At least you won't lose these flashcards" , "Look at that.it's study o'clock"]
+    greeting = ['Wow flashcards...Way to go!', 'Sshhhh Your flashcards are sleeping!', "At least you won't lose these flashcards" , "Look at that. It's study o'clock"]
     @dynamic_welcome = greeting.sample(1).join(', ')
   end
 end

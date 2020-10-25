@@ -3,6 +3,11 @@ class ThatlabsController < ApplicationController
   def index
     redirect_if_not_logged_in
     @questions = Question.all.order("created_at DESC")
+    if params[:search]
+      @search_term = Question.find_by(lab: params[:search])
+      @questions = @questions.search_by(@search_term)
+    end
+
   end
 
   def new_question
@@ -32,7 +37,7 @@ class ThatlabsController < ApplicationController
     @answer.question_id = @the_question.id
     @answer.user_id = User.find_by(:username => session[:username]).id
     if @answer.save
-      redirect_to "/questions/#{@the_question.id}"
+      redirect_to "/questions/#{@the_question.id}", notice: "Your answer has been saved!"
     else
       render 'question_show'
     end

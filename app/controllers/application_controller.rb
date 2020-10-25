@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  add_flash_types :info, :error, :warning
+  
   def logged_in?
     !!session[:username]
   end
@@ -19,5 +20,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
+
 end

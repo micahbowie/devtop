@@ -1,5 +1,10 @@
-<h1>All your Flashcards!</h1>
-<h3><%= @greeting %></h3>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Here are all your flashcards</h1>
+    <p class="lead"><%= @greeting %></p>
+  </div>
+</div>
 
 <% if @current_user_flashcards.empty? == true %>
   <h3><%= redirect_to error_path %></h3>

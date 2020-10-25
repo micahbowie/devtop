@@ -1,11 +1,35 @@
-<h1>Sign In</h1>
-
-<%= form_tag('/sessions') do %>
-  <p>
-    <%= label_tag "Username:" %>
-    <%= text_field_tag "username" %>
-    <%= label_tag "Password:" %>
-    <%= text_field_tag "password" %>
-  </p>
-  <%= submit_tag "Sign In" %>
+<% flash.each do |type, notice| %>
+  <div class="alert alert-danger" role="alert">
+    <strong><%= notice %></strong>
+  </div>
 <% end %>
+
+<div class="welcome-container">
+  <h1>Welcome to Devtop</h1>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Login In</h5>
+            <form class="form-signin" action="/sessions" method="post">
+              <input type="hidden" name="authenticity_token" value="5wLgH1antz8ID6AzAOriqScqvxXY4b/67ucgy5+1qHIbQ3gxJiqhfFZPxog5tslWSGf4Jzn7xn5rmZ3eS5eBIQ==">
+              <div class="form-label-group">
+                <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputEmail">Username</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

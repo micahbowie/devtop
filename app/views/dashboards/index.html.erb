@@ -1,18 +1,30 @@
-<h1>Welcome back,  <strong><%= @user.username %></strong> !</h1>
-<br>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, <%= @user.username %>!</h1>
+  <p class="lead">Welcome back to Devtop. Try the new "thatLAB" app. Ask and answer questions about labs that you are having trouble with.</p>
+  <hr class="my-4">
+  <p>Join the community of Flatiron students present and past. Get your questions answered.</p>
+  <a class="btn btn-primary btn-lg" href="/thatlabs" role="button">thatLAB</a>
+</div>
+
+<% flash.each do |type, notice| %>
+  <div class="alert alert-success" role="alert">
+    <strong><%= notice %></strong>
+  </div>
+<% end %>
+
 <h3>Pick an app</h3>
 <ul>
-  <a href="https://stackoverflow.com/"><li>Stack Overflow </li></a>
-  <a href="https://www.codewars.com/"><li>Code Wars</li></a>
-  <a href="/notes"><li>Notes </li></a>
-  <a href="/thatlabs"><li>thatLAB</li></a>
-  <a href="/flashcards"><li>Flashcards</li></a>
-  <a href="https://www.twitter.com/"><li>Twitter</li></a>
-  <a href="https://www.slack.com/"><li>Slack</li></a>
-  <a href="https://www.learn.co/"><li>Learn.co</li></a>
-  <a href="https://www.github.com/"><li>Github</li></a>
-  <a href="https://www.rubyguides.com/"><li>Rubyguides</li></a>
-  <a href="https://www.codepen.io/"><li>Codepen</li></a>
+  <a href="https://stackoverflow.com/" target="_blank"><li>Stack Overflow </li></a>
+  <a href="https://www.codewars.com/" target="_blank"><li>Code Wars</li></a>
+  <a href="/notes" target="_blank"><li>Notes </li></a>
+  <a href="/thatlabs" target="_blank"><li>thatLAB</li></a>
+  <a href="/flashcards" target="_blank"><li>Flashcards</li></a>
+  <a href="https://www.twitter.com/" target="_blank"><li>Twitter</li></a>
+  <a href="https://www.slack.com/" target="_blank"><li>Slack</li></a>
+  <a href="https://www.learn.co/" target="_blank"><li>Learn.co</li></a>
+  <a href="https://www.github.com/" target="_blank"><li>Github</li></a>
+  <a href="https://www.rubyguides.com/" target="_blank"><li>Rubyguides</li></a>
+  <a href="https://www.codepen.io/" target="_blank"><li>Codepen</li></a>
 </ul>
 
-<%= link_to "Logout", logout_path, class:"button" %>
+<%= link_to "Logout", logout_path, class:"btn btn-dark"%>

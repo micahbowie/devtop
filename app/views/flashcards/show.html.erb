@@ -1,4 +1,11 @@
 <h1>Your Flashcards</h1>
+
+<% flash.each do |type, notice| %>
+  <div class="alert alert-primary" role="alert">
+    <strong><%= notice %></strong>
+  </div>
+<% end %>
+
   <%= @card.front %>
   <br>
   <%= @card.back %>
