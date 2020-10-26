@@ -2,12 +2,8 @@ class ThatlabsController < ApplicationController
 
   def index
     redirect_if_not_logged_in
-    @questions = Question.all.order("created_at DESC")
-    if params[:search]
-      @search_term = Question.find_by(lab: params[:search])
-      @questions = @questions.search_by(@search_term)
-    end
-
+    # @questions = Question.all.order("created_at DESC")
+    @questions = Question.search(params[:search])
   end
 
   def new_question

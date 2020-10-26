@@ -6,9 +6,21 @@
   </div>
 <% end %>
 
-  <%= @card.front %>
-  <br>
-  <%= @card.back %>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="text-container">
+        <%= @card.front %>
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <div class="text-container">
+        <%= @card.back %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <%= link_to "Edit", edit_flashcard_path(@card), class:"button" %>
   <%= link_to "Delete", flashcard_path(@card), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>

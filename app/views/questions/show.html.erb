@@ -12,16 +12,23 @@
 <h2><%= @question.question_content %></h2>
 <br>
 <br>
-
+<h4>Answers</h4>
 <% if @answers != nil %>
   <% @answers.each do |answer| %>
-  <ul>
-    <li><%= answer.answer_content %></li>
-    <br>
-    <br>
-  </ul>
-  <% end %>
-  <% end %>
+           <ul>
+             <li>
+               <div class="col-4 mt-4 ">
+                  <div class="jumbotron style-06">
+                  <span class="display-5">
+                  <%= answer.answer_content %>
+                  </span>
+               </div>
+              </div>
+
+           </li>
+           </ul>
+       <% end %>
+       <% end %>
 
 
 <%= form_tag("/saveanswer/#{@question.id}") do %>

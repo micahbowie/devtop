@@ -1,5 +1,6 @@
-<%= form_for "", url: questions_path, role: "search", method: :get do %>
-<%= text_field_tag :search, @search_term, placeholder: "Search..."%>
+<%= form_tag thatlabs_path, :method => "get" do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search..."%>
+<%= submit_tag "Search" %>
 <% end %>
 
 <% if @questions == nil %>
