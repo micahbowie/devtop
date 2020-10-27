@@ -4,29 +4,31 @@
   </div>
 <% end %>
 
+<article class="message is-dark">
+  <div class="message-body">
+  <strong>  <%= @question.question_title %></strong>
+  <br>
+    <p><%= @question.question_content %></p>
+    <br>
+    <em><%= @question.lab %></em>
+</article>
 
-<strong><h1><%= @question.question_title %></h1></strong>
-<em><h2><%= @question.lab %></h2></em>
-<br>
-<br>
-<h2><%= @question.question_content %></h2>
-<br>
-<br>
-<h4>Answers</h4>
+
 <% if @answers != nil %>
   <% @answers.each do |answer| %>
-           <ul>
-             <li>
-               <div class="col-4 mt-4 ">
-                  <div class="jumbotron style-06">
-                  <span class="display-5">
-                  <%= answer.answer_content %>
-                  </span>
-               </div>
-              </div>
-
-           </li>
-           </ul>
+  <div class=".d-sm-flex p-2 bd-highlight">
+  <div class="list-group">
+      <a class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <!-- <h5 class="mb-1">List group item heading</h5> -->
+          <!-- <small>3 days ago</small> -->
+        </div>
+        <p class="mb-1"><%= answer.answer_content %></p>
+        <% @user = User.find_by(id: answer.user_id) %>
+        <small>Answered by, <%= @user.username %></small>
+       </a>
+       </div>
+       </div>
        <% end %>
        <% end %>
 

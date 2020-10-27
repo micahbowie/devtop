@@ -1,3 +1,39 @@
 // Place all the styles related to the dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron-container {
+  width: 80%;
+  margin: auto;
+}
+.app-container {
+    padding: 30px;
+    margin: auto;
+    width: 80%;
+    /*  background-color: red; */
+    text-align: center;
+    // font-size: 40px;
+}
+
+.app-container a {
+    margin-left: 35px;
+    /*   margin-botom: 50px; */
+    margin: 50px;
+}
+
+figcaption {}
+
+.app-row-1 {
+    /*   background-color: green; */
+    width: 75%;
+    margin: auto;
+    padding: 5px;
+}
+
+.app-row-2 {
+    /*   background-color: green; */
+    width: 75%;
+    margin: auto;
+    padding: 5px;
+    padding-top: 35px;
+}

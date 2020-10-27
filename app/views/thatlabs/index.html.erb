@@ -1,21 +1,31 @@
-<%= form_tag thatlabs_path, :method => "get" do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search..."%>
-<%= submit_tag "Search" %>
-<% end %>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Find by Lab</a>
+  <form class="form-inline" action="/thatlabs" method= "get">
+    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<br>
+<br>
 
 <% if @questions == nil %>
   <% redirect_to error_path %>
   <% else %>
   <% @questions.each do |question| %>
-  <ul>
-    <a href="/questions/<%= question.id %> "><li>
-    <strong>  <h1> <%= question.question_title %> </hl> </strong>
+<a href="/questions/<%= question.id %>><%= question.question_title %></a>
+<br>
+  <div class="card">
+    <div class="card-header">
       <h2> <%=question.lab %> </h2>
-      <p> <%= question.question_content %></p>
-      Asked by: <%= User.find(question.user_id).username %>
-    </li></a>
-    <br>
-    <br>
-  </ul>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p> <%= question.question_content %></p>
+        <footer class="blockquote-footer">Asked By <cite title="Source Title"> <%= User.find(question.user_id).username %></cite></footer>
+      </blockquote>
+    </div>
+  </div>
+  <br>
+  <br>
   <% end %>
   <% end %>
