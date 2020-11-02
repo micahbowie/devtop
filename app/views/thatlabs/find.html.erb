@@ -1,0 +1,28 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Find by Lab</a>
+  <form class="form-inline" action="/thatlab" method= "get">
+    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<br>
+<br>
+
+
+<% if @questions == nil %>
+  <% redirect_to error_path %>
+  <% else %>
+  <% @questions.each do |question| %>
+    <br>
+    <div class="list-container">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h3><a href="/questions/<%= question.id %>"><%= question.question_title %></a></h3>
+          <strong><%= question.lab %></strong>
+          <p><%= question.question_content %></p>
+        </li>
+      </ul>
+    </div>
+  <br>
+  <% end %>
+  <% end %>

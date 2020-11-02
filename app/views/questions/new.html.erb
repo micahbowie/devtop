@@ -1,16 +1,30 @@
-<strong><h1>Ask your question?</h1></strong>
+<br>
+<br>
+<br>
+<div class="question-container">
+  <strong><h1>Ask your question</h1></strong>
+  <br>
+  <input class="form-control" type="text" placeholder="When entering a lab name please copy and paste the exact repo name from github.  Example: rails-form_tag-readme-onl01-seng-pt-061520 " readonly>
+  <br>
+  <form action="/questions" method="post">
+    <input type="hidden" name="authenticity_token" value="PSQFoBwzsrzv8ZJYtDOE5iPKJJmn3N/4GyOo2lovc9T8l68aPSbABRMoky784CpPA+7nGhBcZj0/oPMWLLwa/Q==">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="exampleFormControlInput1">Lab</label>
+        <input type="text" name="lab" class="form-control" id="exampleFormControlInput1" placeholder="rails-form_tag-readme-onl01-seng-pt-061520">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="exampleFormControlInput1">Question</label>
+        <input type="text" name="question_title" class="form-control" id="exampleFormControlInput1" placeholder="How do yo add an input?">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Explain what is going on:</label>
+      <textarea class="form-control" name="question_content"  id="exampleFormControlTextarea1" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 
-<%= form_tag('/questions') do %>
-  <p>
-    <%= label_tag "Lab name:" %>
-    <%= text_field_tag "lab" %>
-    <br>
-    <%= label_tag "Question:" %>
-    <%= text_field_tag "question_title" %>
-    <br>
-    <%= label_tag "Describe the problem:" %>
-    <br>
-    <%= text_area_tag "question_content", nil, rows: 20, cols: 45 %>
-  </p>
-  <%= submit_tag "Save" %>
-<% end %>
+<br>
+<br>

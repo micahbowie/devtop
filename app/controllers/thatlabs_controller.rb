@@ -6,6 +6,10 @@ class ThatlabsController < ApplicationController
     @questions = Question.search(params[:search])
   end
 
+  def find
+    @questions = Question.search(params[:search])
+  end
+
   def new_question
     @question = Question.new
   end

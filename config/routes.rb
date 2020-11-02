@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   #thatlab routes
   resources :thatlabs, only: [:index]
+  get '/thatlab', to: 'thatlabs#find'
 
   #question routes
   resources :questions

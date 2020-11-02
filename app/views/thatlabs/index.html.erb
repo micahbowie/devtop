@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand">Find by Lab</a>
-  <form class="form-inline" action="/thatlabs" method= "get">
+  <form class="form-inline" action="/thatlab" method= "get">
     <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
@@ -8,24 +8,10 @@
 <br>
 <br>
 
-<% if @questions == nil %>
-  <% redirect_to error_path %>
-  <% else %>
-  <% @questions.each do |question| %>
-<a href="/questions/<%= question.id %>><%= question.question_title %></a>
-<br>
-  <div class="card">
-    <div class="card-header">
-      <h2> <%=question.lab %> </h2>
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p> <%= question.question_content %></p>
-        <footer class="blockquote-footer">Asked By <cite title="Source Title"> <%= User.find(question.user_id).username %></cite></footer>
-      </blockquote>
-    </div>
-  </div>
-  <br>
-  <br>
-  <% end %>
-  <% end %>
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to thatLAB!</h1>
+  <p class="lead">To find previous asked/answered questions, use the search bar. Search the lab you are having trouble with.</p>
+  <hr class="my-4">
+  <p>To create a new question about a lab use the link below. Once your question has been submitted other members will give answers or feedback.</p>
+  <a class="btn btn-primary btn-lg" href="/questions/new" role="button">New Question</a>
+</div>
