@@ -1,13 +1,33 @@
-<h1>Register</h1>
 
-<%= form_tag('/users') do %>
-  <p>
-    <%= label_tag "Username:" %>
-    <%= text_field_tag "username" %>
-    <%= label_tag "Password:" %>
-    <%= password_field_tag "password" %>
-  </p>
-  <%= submit_tag "Register" %>
-<% end %>
-<br>
-<%= link_to "Sign In", login_path, class:"button" %>
+<div class="welcome-container">
+  <h1>Welcome to Devtop</h1>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <form class="form-signin" action="/sessions" method="post">
+              <input type="hidden" name="authenticity_token" value="Hr5osOMNkl4ijzYY8PngOCmZIpE/poNs8FmKZSNqJ4HfDcIKwhjg595WN264Kk6RCb3hEogmOqnU2tGpVflOqA==">
+              <div class="form-label-group">
+                <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputEmail">Username</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+              <hr class="my-4">
+            </form>
+            <a class="nav-link" href="/login">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>

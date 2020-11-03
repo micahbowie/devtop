@@ -8,3 +8,7 @@
 -add search bar to that labs for searching
 -make a set of flashcards
 -add code snippet to answers
+-make register route log you in if the that username an password are already saved
+-fix register
+-add new elements
+-fix question search
