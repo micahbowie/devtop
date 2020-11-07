@@ -1,17 +1,57 @@
-<h1 class='title'>New Note</h1>
 
-<div class="section">
-  <%= simple_form_for @note do |x| %>
-  <div class="field">
-    <div class="control">
-      <%= x.input :title, input_html: { class: 'input'}, wrapper: false, label_html: { class: 'label'} %>
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-      <%= x.input :content, input_html: { class: 'textarea'}, wrapper: false, label_html: { class: 'label'} %>
-    </div>
-  </div>
-  <%= x.button :submit, 'Save note', class: "button is-primary" %>
-  <% end %>
-</div>
+<style>
+  #new-note{
+    margin: 450px;
+    width: 45%;
+    padding: 0.1px;
+    margin-top: 15px;
+  }
+  #new-note ul li a{
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    overflow:auto;
+    height:45em;
+    width:35em;
+    padding:1.3em;
+  }
+  #create input {
+ background-color:#FFF;
+ min-height:40px;
+ width:515px;
+ font-size:14pt;
+ margin-bottom: 30px;
+ padding: 40;
+ border-radius: 10px;
+ background:rgba(255,255,255,1.0);
+ border:none;
+}
+#newnote {
+ margin-top: 1px;
+ background:rgba(255,255,255,1.0);
+ border:none;
+}
+#new-note-submit {
+ margin-top: 13px;
+ width:100px;
+}
+</style>
+
+<div id="new-note">
+        <ul>
+          <li>
+            <a>
+              <div id="create">
+                <form action="/notes" method="POST">
+                  <input type="text" name="title" placeholder="Title your note" required>
+                  <input type="hidden" name="authenticity_token" value="+qxjzDLCWP6wdA981RYrYEt2dPoPqXWTkQ5ibMkthsCtuTAA9QMK4RlE/HIvpB/syhopHahsyIEhLMfeI6Z6Kg==">
+                  <textarea id="newnote" name="content"rows="20" cols="70" placeholder="Jot something down.." required></textarea>
+                  <input id="new-note-submit" type="submit">
+                </form>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </body>

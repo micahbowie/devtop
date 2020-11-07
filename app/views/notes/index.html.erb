@@ -1,24 +1,53 @@
-<h1 class='title'><%= @user %>'s Note </h1>
-<h3><%= @greeting %></h3>
-<div class="section">
-	<div class="container">
-		<% if @current_user_notes.empty? == true %>
-      <% redirect_to error_path %>
+<style>
+	#all-notes ul,li{
+  list-style:none;
+  overflow:auto;
+}
+#all-notes ul{
+  overflow:hidden;
+  padding:3em;
+}
+#all-notes ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#FCFF4B;
+  display:block;
+  overflow:auto;
+  height:20em;
+  width:20em;
+  padding:1.3em;
+}
+#all-notes ul li{
+  margin:1.6em;
+  float:left;
+}
+#all-notes li h2{
+  color: #6A6A6A;
+}
+#all-notes h1{
+  text-align: center;
+}
+</style>
+<br>
+<br>
+<div id="center">
+  <div id="all-notes">
+    <body>
+      <h1><%= "#{@user}'s Notes" %></h1>
+      <% if @current_user_notes.empty? == true %>
+      <h3><%= erb :no_message %></h3>
       <% else %>
-		<% @current_user_notes.each do |note| %>
-			<div class="card">
-		  <div class="card-content">
-		    <div class="media">
-		      <div class="media-content">
-		        <p class="title is-4"><%= link_to note.title, note  %></p>
-		      </div>
-		    </div>
-		    <div class="content">
-		     	<%= note.content %>
-		    </div>
-		  </div>
-		</div>
-		<% end %>
-		<% end %>
-	</div>
-</div>
+        <ul>
+      <% @current_user_notes.each do |note| %>
+          <li>
+            <h2><%=note.title%></h2>
+            <a href="notes/<%= note.id%>"
+              <p><%=note.content%></p>
+            </a>
+          </li>
+          <%end%>
+          <%end%>
+        </ul>
+      </body>
+    </div>
+  </div>

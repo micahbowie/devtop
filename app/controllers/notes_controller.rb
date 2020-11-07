@@ -59,7 +59,7 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:title, :content)
+      params.permit(:title, :content)
     end
 
     def authenticate_user_of_note

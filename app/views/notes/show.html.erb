@@ -1,14 +1,50 @@
-<section class="section">
-  <div class="container ">
-    <h1 class="title">
-      <%= @note.title%>
-    </h1>
-    <div class="content">
-      <%= @note.content%>
-    </div>
-  </div>
-    <%= link_to "Edit", edit_note_path(@note), class:"button" %>
-    <%= link_to "Delete", note_path(@note), method: :delete, data: {confirm: "Aare you sure?"}, class: "button is-danger" %>
-    <%= link_to "New Note", new_note_path, class:"button" %>
+<style>
+  #new-note{
+  margin: auto;
+  <!-- margin: 450px; -->
+  width: 45%;
+  padding: 0.1px;
+  margin-top: 15px;
+}
+#new-note ul li a{
+  margin: auto;
+  text-decoration:none;
+  color:#000;
+  background:#FCFF4B;
+  display:block;
+  overflow:auto;
+  height:30em;
+  width:30em;
+  padding:1.3em;
+}
 
-</section>
+.note-container{
+  width: 50%;
+  margin: auto;
+}
+.note-container h1{
+  text-align: center;
+}
+#warning{
+  text-align: center;
+}
+</style>
+<br>
+<br>
+<br>
+<div class="note-container">
+<h1><%= @note.title%></h1>
+<div id="new-note">
+    <ul>
+      <li>
+          <a href="/notes/<%= params[:id] %>/edit">
+            <p><%=@note.content%></p>
+          </a>
+        </li>
+      </ul>
+      <h5 id="warning">*click on the note to edit note<h5>
+    </div>
+  </<body>
+</div>
+<br>
+<br>
