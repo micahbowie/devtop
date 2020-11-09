@@ -5,6 +5,9 @@ class NotesController < ApplicationController
      @current_user_notes = current_user.notes.order("created_at DESC")
      @user = current_user.username
      @greeting = dynamic_welcome
+     if @current_user_notes.empty? == true
+       render "no_notes"
+     end
   end
 
   def new

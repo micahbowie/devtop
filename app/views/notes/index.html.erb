@@ -34,9 +34,6 @@
   <div id="all-notes">
     <body>
       <h1><%= "#{@user}'s Notes" %></h1>
-      <% if @current_user_notes.empty? == true %>
-      <h3><%= erb :no_message %></h3>
-      <% else %>
         <ul>
       <% @current_user_notes.each do |note| %>
           <li>
