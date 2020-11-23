@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # render :text => 'hello world'
+    dynamic_background
+    # render :text => 'hello world's
   end
 
   def create
@@ -18,4 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+
+private
+
+def dynamic_background
+  @backgroundimg = ["https://rb.gy/d2bjqr", "https://rb.gy/93exoq", "https://rb.gy/axbchi", "https://rb.gy/ypujiv" ].sample(1).join(', ')
+end
 end

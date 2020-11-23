@@ -3,9 +3,6 @@
 -add a create new note button to notes path
 -add go back to notes button on note show page
 -fix notes and flashcard index page logic "redirect_to"
--add flash message after you answer a question!
--add flash messages all through out program
--add search bar to that labs for searching
 -make a set of flashcards
 -add code snippet to answers
 -make register route log you in if the that username an password are already saved

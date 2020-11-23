@@ -1,17 +1,75 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Find by Lab</a>
-  <form class="form-inline" action="/thatlab" method= "get">
-    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
-<br>
-<br>
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-<div class="jumbotron">
-  <h1 class="display-4">Welcome to thatLAB!</h1>
-  <p class="lead">To find previous asked/answered questions, use the search bar. Search the lab you are having trouble with.</p>
-  <hr class="my-4">
-  <p>To create a new question about a lab use the link below. Once your question has been submitted other members will give answers or feedback.</p>
-  <a class="btn btn-primary btn-lg" href="/questions/new" role="button">New Question</a>
+.container{
+    padding: 10%;
+    text-align: center;
+}
+#custom-search-input {
+    margin:0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    width:100%;
+    padding-right: 3px;
+    padding-left: 15px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 0;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: absolute;
+    right:0;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: orange;
+    cursor: unset;
+    z-index: 2;
+}
+
+.search-query:focus{
+    z-index: 0;
+}
+.thatlab-container {
+text-align: center;
+width: 40%;
+margin: auto;
+}
+</style>
+
+<div class="container">
+	<div class="row">
+    <div class="thatlab-container">
+      <a href="/thatlabs">
+      <%= image_tag 'thatlab_blk.png' %>
+      </a>
+    </div>
+	    <div class="col-12">
+        <form action="/thatlab" method= "get">
+    	    <div id="custom-search-input">
+                <div class="input-group">
+                    <input type="text" name="search" class="search-query form-control" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button type="button" disabled>
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+  <p>Search the lab you are having trouble with.  |  <a href="/questions/new"> Ask a new question.</a>  |  <a href="/thatlab?search="> See previous questions.</a> </p>
 </div>
