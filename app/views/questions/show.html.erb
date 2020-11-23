@@ -53,7 +53,7 @@ body {
        </div>
       </div>
           <div class="card-body">
-          <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+          <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> <%= @question.created_at.strftime("#{@question.created_at.day.ordinalize} %B %Y") %></div>
               <h5 class="card-title"><%= @question.lab %></h5>
                 <p class="card-text"> <%= @question.question_content %></p>
           </div>
