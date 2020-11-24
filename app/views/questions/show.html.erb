@@ -86,7 +86,7 @@ body {
 
 
     <form accept-charset="UTF-8" action="/saveanswer/<%= @question.id %>" method="POST">
-       <input type="hidden" name="authenticity_token" value="cP5cLA3RElCDN+wv8/gQtMcSsXVUZuH4VxHHquY/QS6Pp43xmxF6BlscbdEt/2JHOMNM10pyIo1NPrjRCt6+gw==">
+      <%= token_tag nil %>
          <textarea class="span10" id="new_message" name="answer_content"placeholder="Type in your answer" rows="8"></textarea>
           <button class="btn btn-info" type="submit">Submit Answer</button>
      </form>

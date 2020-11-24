@@ -27,7 +27,7 @@
                             <p class="text-muted mb-4">Sign Up</p>
                             <form action="/users" method="post">
                                 <div class="form-group mb-3">
-                                    <input type="hidden" name="authenticity_token" value="Hr5osOMNkl4ijzYY8PngOCmZIpE/poNs8FmKZSNqJ4HfDcIKwhjg595WN264Kk6RCb3hEogmOqnU2tGpVflOqA==">                                    <input id="inputEmail" name="username" placeholder="Username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                  <%= token_tag nil %>
                                 </div>
                                 <div class="form-group mb-3">
                                     <input id="inputPassword" type="password" name="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">

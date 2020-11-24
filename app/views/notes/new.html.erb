@@ -1,15 +1,15 @@
 
 <style>
   #new-note{
-    margin: 450px;
+    margin: 500px;
     width: 45%;
     padding: 0.1px;
-    margin-top: 15px;
+    margin-top: 45px;
   }
   #new-note ul li a{
     text-decoration:none;
     color:#000;
-    background:#ffc;
+    background:#FCFF4B;
     display:block;
     overflow:auto;
     height:45em;
@@ -45,7 +45,7 @@
               <div id="create">
                 <form action="/notes" method="POST">
                   <input type="text" name="title" placeholder="Title your note" required>
-                  <input type="hidden" name="authenticity_token" value="+qxjzDLCWP6wdA981RYrYEt2dPoPqXWTkQ5ibMkthsCtuTAA9QMK4RlE/HIvpB/syhopHahsyIEhLMfeI6Z6Kg==">
+                  <%= token_tag nil %>
                   <textarea id="newnote" name="content"rows="20" cols="70" placeholder="Jot something down.." required></textarea>
                   <input id="new-note-submit" type="submit">
                 </form>
@@ -53,5 +53,4 @@
             </a>
           </li>
         </ul>
-      </div>
-    </body>
+  </div>

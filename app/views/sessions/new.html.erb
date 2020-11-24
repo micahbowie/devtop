@@ -33,7 +33,7 @@
                             <p class="text-muted mb-4">Sign In</p>
                             <form action="/sessions" method="post">
                                 <div class="form-group mb-3">
-                                  <input type="hidden" name="authenticity_token" value="5wLgH1antz8ID6AzAOriqScqvxXY4b/67ucgy5+1qHIbQ3gxJiqhfFZPxog5tslWSGf4Jzn7xn5rmZ3eS5eBIQ==">
+                                  <%= token_tag nil %>
                                     <input id="inputEmail" name="username" placeholder="Username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
