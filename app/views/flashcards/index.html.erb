@@ -7,7 +7,7 @@
 </div>
 
 <% if @current_user_flashcards.empty? == true %>
-  <h3><%= redirect_to error_path %></h3>
+  <%= redirect_to error_path%>
   <% else %>
 <% @current_user_flashcards.each do |card| %>
 <a href="/flashcards/<%= card.id %>">
