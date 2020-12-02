@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   #dashboard routes
   get '/devtop', to: 'dashboards#index'
-
+  post '/gosearch', to: 'dashboards#gosearch'
   #thatlab routes
   resources :thatlabs, only: [:index]
   get '/thatlab', to: 'thatlabs#find'

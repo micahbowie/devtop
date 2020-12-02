@@ -15,7 +15,6 @@
     width:100%;
     padding-right: 3px;
     padding-left: 15px;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
     margin-bottom: 0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -25,12 +24,10 @@
 #custom-search-input button {
     border: 0;
     background: none;
-    /** belows styles are working good */
     padding: 2px 5px;
     margin-top: 2px;
     position: absolute;
     right:0;
-    /* IE7-8 doesn't have border-radius, so don't indent the padding */
     margin-bottom: 0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -48,13 +45,23 @@ text-align: center;
 width: 40%;
 margin: auto;
 }
+body {
+  background-image: url("https://rb.gy/wvhfcg");
+   background-color: #cccccc;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.container a {
+  color: black;
+}
 </style>
 
 <div class="container">
 	<div class="row">
     <div class="thatlab-container">
       <a href="/thatlabs">
-      <%= image_tag 'thatlab_blk.png' %>
+      <%= image_tag 'thatlab.png' %>
       </a>
     </div>
 	    <div class="col-12">

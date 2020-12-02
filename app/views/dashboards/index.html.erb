@@ -1,79 +1,38 @@
-
-
-<% flash.each do |type, notice| %>
-  <div class="alert alert-success" role="alert">
-    <strong><%= notice %></strong>
-  </div>
-<% end %>
-<br>
-<br>
-<div class="jumbotron-container">
-<div class="jumbotron">
-  <h1 class="display-4">Hello, <%= @user.username %>!</h1>
-  <p class="lead">Welcome back to Devtop. Try the new "thatLAB" app. Ask and answer questions about labs that you are having trouble with.</p>
-  <hr class="my-4">
-  <p>Join the community of Flatiron students present and past. Get your questions answered.</p>
-  <a class="btn btn-primary btn-lg" href="/thatlabs" role="button">thatLAB</a>
-</div>
-</div>
-
-
-<div class="app-container">
-    <h1>Apps</h1>
-    <em><p>Here are some of the essentials and most popular tools for a devloper. Pick an app to get started!</p></em>
-    <br>
-    <div class="card">
-    <div class="card-body">
-    <div class="app-row-1">
-        <a href="https://www.codewars.com/">
-            <img src="https://camo.githubusercontent.com/c6341567c3ede1b4ee0935509a378c482153026f/687474703a2f2f7777772e736f66746c61622e6e7475612e67722f7e6e69636b69652f696d616765732f6c6f676f2f636f6465776172732e706e67" alt="Codewars" style="width:100px;height:100px;">
-        </a>
-
-        <a href="https://www.github.com/">
-            <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-15/32/github_social_media-512.png" alt="GitHub" style="width:100px;height:100px;">
-        </a>
-
-        <a href="https://www.twitter.com/">
-            <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt="Twitter" style="width:100px;height:100px;">
-        </a>
-
-        <a href="https://www.rubyguides.com/">
-            <img src="https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/ruby-512.png" alt="RubyGuides" style="width:100px;height:100px;">
-        </a>
-
-    </div>
-
-
-    <div class="app-row-2">
-        <a href="https://www.codepen.io/">
-            <img src="https://cdn0.iconfinder.com/data/icons/social-36/66/49-512.png" alt="Codepen" style="width:100px;height:100px;">
-        </a>
-        <a href="/notes">
-            <img src="https://cdn2.iconfinder.com/data/icons/random-set-1/424/Asset_89-512.png" alt="Notes" style="width:100px;height:100px;">
-        </a>
-        <a href="https://guides.rubyonrails.org/">
-            <img src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/ruby-on-rails-512.png" alt="RailsGuide" style="width:100px;height:100px;">
-        </a>
-
-        <a href="https://www.slack.com/">
-            <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Slack_colored_svg-512.png" alt="Slack" style="width:100px;height:100px;">
-        </a>
-
-    </div>
-
-
-    <div class="app-row-2">
-        <a href="https://stackoverflow.com">
-            <img src="https://cdn2.iconfinder.com/data/icons/social-icons-color/512/stackoverflow-512.png" alt="StackOverflow" style="width:100px;height:100px;">
-        </a>
-        <a href="https://learn.co">
-            <img src="https://avatars1.githubusercontent.com/u/10897717?s=200&v=4" alt="Learn.co" style="width:100px;height:100px;">
-        </a>
-        <a href="/thatlabs">
-            <img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/512/L.png" alt="thatLAB" style="width:100px;height:100px;">
-        </a>
-
-    </div>
-    </div>
-    </div>
+<style>
+  body {
+     /* background-image: url("devtop-homepage.png"); */
+     background-color: #141414;
+     background-position: center;
+     background-repeat: no-repeat;
+     /* background-size: 1600px 900px; */
+  }
+  .image-container{
+    margin: auto;
+    width: 68%;
+  }
+  .test-container{
+    background-color: red;
+  }
+</style>
+<div class="image-container">
+<div class="main-container">
+     <a href="https://www.twitter.com/"><div class="item-1"></div></a>
+     <a href="https://www.github.com/"><div class="item-2"></div></a>
+     <a href="https://guides.rubyonrails.org/"><div class="item-3"></div></a>
+     <a href="/thatlabs"><div class="item-4"></div></a>
+     <a href="https://learn.co"><div class="item-5"></div></a>
+     <a href="https://stackoverflow.com"><div class="item-6"></div></a>
+     <a href="https://www.codewars.com/"><div class="item-7"></div></a>
+     <a href="https://www.slack.com/"><div class="item-8"></div></a>
+     <a href="https://www.codepen.io/"><div class="item-9"></div></a>
+     <a href="https://www.rubyguides.com/"><div class="item-10"></div></a>
+     <a href="/notes"><div class="item-11"></div></a>
+     <a href="/flashcards"><div class="item-12"></div></a>
+     <%= image_tag("devtop-no-bg.png", size: "1100x1100", alt: "devtop screen") %>
+     <form class="google-search" action="/gosearch" method="post">
+       <input type="text" name="search">
+       <%= token_tag nil %>
+       <input type="submit" value="Submit">
+     </form>
+ </div>
 </div>
