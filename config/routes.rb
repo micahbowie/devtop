@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#logout'
   get '/error', to: 'sessions#error'
-
+  get 'auth/github', :as => 'github_auth'
+  match 'auth/:provider/callback', to: 'sessions#github_login', via: [:get, :post]
   #notes routes
   resources :notes
 

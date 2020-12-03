@@ -26,15 +26,16 @@
                             <h3 class="display-4">Devtop</h3>
                             <p class="text-muted mb-4">Sign Up</p>
                             <form action="/users" method="post">
-                                <div class="form-group mb-3">
-                                  <%= token_tag nil %>
-                                </div>
+                              <div class="form-group mb-3">
+                                <%= token_tag nil %>
+                                  <input id="inputEmail" name="username" placeholder="Username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                              </div>
                                 <div class="form-group mb-3">
                                     <input id="inputPassword" type="password" name="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign Up!</button>
                             </form>
-                            <a href="/login">Already have an account?</a>
+                            <p><%= link_to "Already have an account?", :login %> | <%= link_to "Sign up with GitHub", :github_auth %></p>
                         </div>
                     </div>
                 </div>

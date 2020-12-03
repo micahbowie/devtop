@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Authenitcation gem
+gem "omniauth"
+
+# GitHub Authenitcation
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+
 #Make errors beter looking
 gem 'better_errors', '~> 2.4'
 # Bulma CSS framework
@@ -65,3 +71,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'dotenv-rails'
