@@ -16,4 +16,5 @@ Refactor
 -delete test and folders not being use
 -make readme file
 -add all css to the proper css files
--add params to all forms 
+-add params to all forms
+-add helpers to helper modules
