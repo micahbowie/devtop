@@ -1,86 +1,10 @@
-<style>
-	#all-notes ul,li{
-  list-style:none;
-  overflow:auto;
-}
-#all-notes ul{
-  overflow:hidden;
-  padding:3em;
-}
-#all-notes ul li a{
-  text-decoration:none;
-  color:#000;
-  background:#FCFF4B;
-  display:block;
-  overflow:auto;
-  height:20em;
-  width:20em;
-  padding:1.3em;
-}
-#all-notes ul li{
-  margin:1.6em;
-  float:left;
-}
-#all-notes li h2{
-  color: white;
-}
-#all-notes h1{
-  text-align: center;
-}
-.notes-navbar-container{
-	margin: auto;
-	width: 100px;
-}
-body {
-   background-color: #141414;
-}
-#all-notes h1{
-	color: white;
-}
-.show-on-hover:hover > ul.dropdown-menu {
-    display: block;
-}
-#nav ul {
-  list-style-type: none;
-	border-radius: 25px;
-  margin: 15px;
-  padding:0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 12.7%;
-}
-
-#nav li {
-  float: left;
-}
-
-#nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-#nav li a:hover {
-  background-color: #5555;
-}
-</style>
-<div id="nav">
-    <ul>
-      <li><a href="/notes">All Notes</a></li>
-      <li><a href="/notes/new">New Note</a></li>
-    </ul>
-  </div>
-
 <br>
 <br>
 <div id="center">
   <div id="all-notes">
     <body>
       <h1><%= "#{@user}'s Notes" %></h1>
+			<h3><%= @dynamic_welcome %></h3>
         <ul>
       <% @current_user_notes.each do |note| %>
           <li>

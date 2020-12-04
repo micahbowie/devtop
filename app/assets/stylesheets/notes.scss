@@ -1,3 +1,139 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#all-notes ul,li{
+  list-style:none;
+  overflow:auto;
+}
+#all-notes ul{
+  overflow:hidden;
+  padding:3em;
+}
+#all-notes ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#FCFF4B;
+  display:block;
+  overflow:auto;
+  height:20em;
+  width:20em;
+  padding:1.3em;
+}
+#all-notes ul li{
+  margin:1.6em;
+  float:left;
+}
+#all-notes li h2{
+  color: white;
+}
+#all-notes h1{
+  text-align: center;
+}
+.notes-navbar-container{
+	margin: auto;
+	width: 100px;
+}
+
+#all-notes h1{
+	color: white;
+}
+.show-on-hover:hover > ul.dropdown-menu {
+    display: block;
+}
+#nav ul {
+  list-style-type: none;
+	border-radius: 25px;
+  margin: 15px;
+  padding:0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 12.7%;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#nav li a:hover {
+  background-color: #5555;
+}
+#all-notes h3 {
+	color: white;
+	text-align: center;
+}
+#new-note{
+  margin: 450px;
+  width: 45%;
+  padding: 0.1px;
+  margin-top: 15px;
+}
+#new-note ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#FCFF4B;
+  display:block;
+  overflow:auto;
+  height:45em;
+  width:35em;
+  padding:1.3em;
+}
+#create input {
+background-color:#FFF;
+min-height:40px;
+width:515px;
+font-size:14pt;
+margin-bottom: 30px;
+padding: 40;
+border-radius: 10px;
+background:rgba(255,255,255,1.0);
+border:none;
+}
+#newnote {
+margin-top: 1px;
+background:rgba(255,255,255,1.0);
+border:none;
+}
+#new-note-submit {
+margin-top: 13px;
+width:100px;
+}
+#show-note{
+margin: auto;
+width: 45%;
+padding: 0.1px;
+margin-top: 15px;
+}
+#show-note ul li a{
+margin: auto;
+text-decoration:none;
+color:#000;
+background:#FCFF4B;
+display:block;
+overflow:auto;
+height:30em;
+width:30em;
+padding:1.3em;
+}
+
+.note-container{
+width: 70%;
+margin: auto;
+}
+.note-container h1{
+text-align: center;
+}
+#warning{
+text-align: center;
+}

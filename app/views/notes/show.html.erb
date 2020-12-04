@@ -1,74 +1,9 @@
-<style>
-  #new-note{
-  margin: auto;
-  <!-- margin: 450px; -->
-  width: 45%;
-  padding: 0.1px;
-  margin-top: 15px;
-}
-#new-note ul li a{
-  margin: auto;
-  text-decoration:none;
-  color:#000;
-  background:#FCFF4B;
-  display:block;
-  overflow:auto;
-  height:30em;
-  width:30em;
-  padding:1.3em;
-}
-
-.note-container{
-  width: 50%;
-  margin: auto;
-}
-.note-container h1{
-  text-align: center;
-}
-#warning{
-  text-align: center;
-}
-#nav ul {
-  list-style-type: none;
-	border-radius: 25px;
-  margin: 15px;
-  padding:0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 12.7%;
-}
-
-#nav li {
-  float: left;
-}
-
-#nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-#nav li a:hover {
-  background-color: #5555;
-}
-</style>
-<div id="nav">
-    <ul>
-      <li><a href="/notes">All Notes</a></li>
-      <li><a href="/notes/new">New Note</a></li>
-    </ul>
-  </div>
-  
 <br>
 <br>
 <br>
 <div class="note-container">
 <h1><%= @note.title%></h1>
-<div id="new-note">
+<div id="show-note">
     <ul>
       <li>
           <a href="/notes/<%= params[:id] %>/edit">

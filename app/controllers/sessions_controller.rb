@@ -14,23 +14,22 @@ class SessionsController < ApplicationController
       user.password = SecureRandom.hex
     end
       session[:username] = user.username
-      redirect_to devtop_path
+      redirect_to :devtop
   end
 
   def create
    user = User.find_by(username: params[:username])
    if user && user.authenticate(params[:password])
      session[:username] = user.username
-     redirect_to devtop_path
+     redirect_to :devtop
    else
-     redirect_to login_path, notice: "Please try again. Your Login was not successful."
+     redirect_to :login, notice: "Please try again. Your Login was not successful."
    end
-   # raise "it worked".inspect
  end
 
   def logout
     session.clear
-    redirect_to login_path
+    redirect_to :login
   end
 
   def error
