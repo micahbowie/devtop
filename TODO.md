@@ -13,8 +13,5 @@
 Refactor
 -add has many through relationship
 -fix all forms
--delete test and folders not being use
--make readme file
 -add all css to the proper css files
--add params to all forms
 -add helpers to helper modules
