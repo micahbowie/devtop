@@ -32,11 +32,8 @@ class SessionsController < ApplicationController
     redirect_to :login
   end
 
-  def error
-
-  end
-
   private
+  
   def dynamic_background
     @backgroundimg = ["https://rb.gy/d2bjqr", "https://rb.gy/93exoq", "https://rb.gy/axbchi", "https://rb.gy/ypujiv" ].sample(1).join(', ')
   end

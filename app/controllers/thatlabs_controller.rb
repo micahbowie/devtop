@@ -1,28 +1,12 @@
 class ThatlabsController < ApplicationController
 before_action :redirect_if_not_logged_in
+
   def index
     @questions = Question.search(params[:search])
   end
 
   def find
     @questions = Question.search(params[:search])
-  end
-
-  def new_question
-    @question = Question.new
-  end
-
-  def create_question
-    @question = Question.new
-    @question.lab = params[:lab]
-    @question.question_title = params[:question_title]
-    @question.question_content = params[:question_content]
-    @question.user_id = User.find_by(:username => session[:username]).id
-    if @question.save
-      redirect_to @question
-    else
-      render 'new'
-    end
   end
 
   def create_answer
@@ -39,13 +23,4 @@ before_action :redirect_if_not_logged_in
     end
   end
 
-  def question_show
-    @question = Question.find(params[:id])
-  end
-
-  private
-
-  def current_question
-    Question.find_by(:id => params[:id])
-  end
 end

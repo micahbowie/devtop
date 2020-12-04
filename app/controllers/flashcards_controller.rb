@@ -1,14 +1,13 @@
 class FlashcardsController < ApplicationController
 before_action :redirect_if_not_logged_in
+before_action :authenticate_user_of_flashcard, except: [:new, :create, :index]
 
   def new
     @card = Flashcard.new
   end
 
   def create
-    @card = Flashcard.new
-    @card.front = params[:front]
-    @card.back = params[:back]
+    @card = Flashcard.new(question_params)
     @card.user_id = User.find_by(:username => session[:username]).id
     if @card.save
       redirect_to @card, notice: "Take a look at your new flashcard!"
@@ -18,7 +17,6 @@ before_action :redirect_if_not_logged_in
   end
 
   def show
-    authenticate_user_of_flashcard
     @card = Flashcard.find(params[:id])
   end
 
@@ -39,7 +37,6 @@ before_action :redirect_if_not_logged_in
   end
 
   def edit
-    authenticate_user_of_flashcard
     @card = Flashcard.find(params[:id])
   end
 
@@ -47,7 +44,7 @@ before_action :redirect_if_not_logged_in
   def destroy
     @card = Flashcard.find(params[:id])
     @card.destroy
-    redirect_to flashcards_path
+    redirect_to :flashcards
   end
 
   private
@@ -55,7 +52,7 @@ before_action :redirect_if_not_logged_in
   def authenticate_user_of_flashcard
     @author_of_flashcard = Flashcard.find(params[:id]).user_id
     if current_user.id != @author_of_flashcard
-      redirect_to error_path
+      redirect_to :flashcards
     end
   end
 
@@ -63,4 +60,9 @@ before_action :redirect_if_not_logged_in
     greeting = ['Wow flashcards...Way to go!', 'Sshhhh Your flashcards are sleeping!', "At least you won't lose these flashcards" , "Look at that. It's study o'clock"]
     @dynamic_welcome = greeting.sample(1).join(', ')
   end
+
+  def flashcard_params
+    params.permit(:front, :back)
+  end
+
 end

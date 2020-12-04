@@ -38,7 +38,6 @@ layout "note-layout"
     else
       render 'edit'
     end
-
   end
 
   def edit
