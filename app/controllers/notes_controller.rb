@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
+before_action :redirect_if_not_logged_in
 
   def index
-    redirect_if_not_logged_in
      @current_user_notes = current_user.notes.order("created_at DESC")
      @user = current_user.username
      @greeting = dynamic_welcome
@@ -11,13 +11,10 @@ class NotesController < ApplicationController
   end
 
   def new
-    redirect_if_not_logged_in
     @note = Note.new
-
   end
 
   def create
-    redirect_if_not_logged_in
     @note = Note.new(note_params)
     @note.user_id = User.find_by(:username => session[:username]).id
 
@@ -25,19 +22,15 @@ class NotesController < ApplicationController
       redirect_to @note
     else
       render 'new'
-      # raise "it worked".inspect
     end
   end
 
   def show
-    redirect_if_not_logged_in
     @note = Note.find(params[:id])
   end
 
   def update
-    redirect_if_not_logged_in
     @note = Note.find(params[:id])
-
     if @note.update(note_params)
       redirect_to '/notes'
     else
@@ -47,14 +40,12 @@ class NotesController < ApplicationController
   end
 
   def edit
-    redirect_if_not_logged_in
     @note = Note.find(params[:id])
   end
 
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
-
     redirect_to notes_path
   end
 

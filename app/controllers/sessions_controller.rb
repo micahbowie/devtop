@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     dynamic_background
-    if session[:username]
+    if current_user
       redirect_to '/devtop', notice: "You are already Logged in!"
     end
   end
@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     username = auth_hash['info']['name']
     user = User.find_or_create_by(username: username) do |user|
       user.username = username
+      user.password = SecureRandom.hex
     end
       session[:username] = user.username
       redirect_to devtop_path

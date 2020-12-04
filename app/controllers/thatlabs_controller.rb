@@ -1,8 +1,6 @@
 class ThatlabsController < ApplicationController
-
+before_action :redirect_if_not_logged_in
   def index
-    redirect_if_not_logged_in
-    # @questions = Question.all.order("created_at DESC")
     @questions = Question.search(params[:search])
   end
 
@@ -15,7 +13,6 @@ class ThatlabsController < ApplicationController
   end
 
   def create_question
-    redirect_if_not_logged_in
     @question = Question.new
     @question.lab = params[:lab]
     @question.question_title = params[:question_title]
@@ -29,7 +26,6 @@ class ThatlabsController < ApplicationController
   end
 
   def create_answer
-    redirect_if_not_logged_in
     @the_question = Question.find_by(:id => params[:id])
     @answer = Answer.new
     @answer.lab = @the_question.lab
@@ -45,13 +41,11 @@ class ThatlabsController < ApplicationController
 
   def question_show
     @question = Question.find(params[:id])
-    # @answers = @question.answers
   end
 
   private
 
   def current_question
     Question.find_by(:id => params[:id])
-    # Question.find(params[:id])
   end
 end

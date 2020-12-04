@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
+before_action :redirect_if_not_logged_in
 
   def index
-    redirect_if_not_logged_in
     @user = current_user
   end
 

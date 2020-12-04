@@ -1,11 +1,10 @@
 class QuestionsController < ApplicationController
-
+before_action :redirect_if_not_logged_in
   def new
     @question = Question.new
   end
 
   def create
-    redirect_if_not_logged_in
     @question = Question.new
     @question.lab = params[:lab]
     @question.question_title = params[:question_title]
@@ -23,9 +22,4 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
   end
 
-  def edit
-  end
-
-  def update
-  end
 end
