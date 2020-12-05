@@ -15,3 +15,4 @@ Refactor
 -fix all forms
 -add all css to the proper css files
 -add helpers to helper modules
+-fix home page loading time
