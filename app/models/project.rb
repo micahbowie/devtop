@@ -1,4 +1,4 @@
 class Project < ApplicationRecord
-  belongs_to :user
-  belongs_to :idea
+  has_many :ideas
+  has_many :users, through: :ideas
 end
