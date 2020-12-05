@@ -1,13 +1,12 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
 
+.login,
+.image {
+min-height: 100vh;
+}
 
 .card-signin {
   border: 0;
@@ -60,7 +59,6 @@
   display: block;
   width: 100%;
   margin-bottom: 0;
-  /* Override default `<label>` margin */
   line-height: 1.5;
   color: #495057;
   border: 1px solid transparent;

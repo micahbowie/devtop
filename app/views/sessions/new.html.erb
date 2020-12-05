@@ -1,16 +1,10 @@
 <style>
-  .login,
-.image {
-  min-height: 100vh;
-}
-
 .bg-image {
   background-image: url('<%= @backgroundimg %>');
   background-size: cover;
   background-position: center center;
 }
 </style>
-
 
 <% flash.each do |type, notice| %>
   <div class="alert alert-danger" role="alert">
