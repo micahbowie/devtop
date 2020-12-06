@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:username] = @user.username
       redirect_to :devtop
     else
-      render :new
+      redirect_to :root
     end
   end
 
