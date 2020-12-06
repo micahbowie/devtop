@@ -1,0 +1,16 @@
+
+  <div class="form-container">
+    <h2>Create a new idea!</h2>
+    <br>
+    <%= form_with model: [:project, @idea] %>
+      <%= check_box_tag(:project_id, "5", false) %>
+      <%= label_tag(:CLI, "CLI project") %> |
+      <%= check_box_tag(:project_id, "4", false) %>
+      <%= label_tag(:Sinatra, "Sinatra project") %> |
+      <%= check_box_tag(:project_id, "3", false) %>
+      <%= label_tag(:Rails, "Rails project") %> |
+      <%= text_area_tag(:idea_content, " ", size: "64x8") %>
+      <br>
+      <%= submit_tag("Save") %>
+
+  </div>

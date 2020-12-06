@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'users#new'
+
   #users routes
   resources :sessions, only: [:create]
   get '/register', to: 'users#new'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get '/error', to: 'sessions#error'
   get 'auth/github', :as => 'github_auth'
   match 'auth/:provider/callback', to: 'sessions#github_login', via: [:get, :post]
+
   #notes routes
   resources :notes
 
@@ -23,18 +25,25 @@ Rails.application.routes.draw do
   #dashboard routes
   get '/devtop', to: 'dashboards#index'
   post '/gosearch', to: 'dashboards#gosearch'
+
   #thatlab routes
   resources :thatlabs, only: [:index]
   get '/thatlab', to: 'thatlabs#find'
 
   #question routes
   resources :questions
-  # get '/questions', to: 'thatlabs#all_questions'
-  # get '/questions/new', to: 'thatlabs#new_question'
-  # get '/questions/:id', to: 'thatlabs#question_show', as: 'question'
   post 'savequestion', to: 'questions#create'
 
   #answer routes
   post 'saveanswer/:id', to: 'thatlabs#create_answer'
+
+  # project routes
+  resources :projects, only: [:show, :index]
+
+  # idea routes
+  scope :projects, module: 'projects', as: 'project' do
+    resources :ideas, only: [:new, :create, :index]
+  end
+
 
 end
