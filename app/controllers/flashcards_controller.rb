@@ -1,6 +1,7 @@
 class FlashcardsController < ApplicationController
 before_action :redirect_if_not_logged_in
 before_action :authenticate_user_of_flashcard, except: [:new, :create, :index]
+before_action :find_card, only: [:show, :edit, :update, :destroy]
 
   def new
     @card = Flashcard.new
@@ -16,17 +17,12 @@ before_action :authenticate_user_of_flashcard, except: [:new, :create, :index]
     end
   end
 
-  def show
-    @card = Flashcard.find(params[:id])
-  end
-
   def index
     @greeting = dynamic_welcome
     @current_user_flashcards = current_user.flashcards.order("created_at DESC")
   end
 
   def update
-    @card = Flashcard.find(params[:id])
     @card.front = params[:front]
     @card.back = params[:back]
     if @card.save
@@ -36,13 +32,7 @@ before_action :authenticate_user_of_flashcard, except: [:new, :create, :index]
     end
   end
 
-  def edit
-    @card = Flashcard.find(params[:id])
-  end
-
-
   def destroy
-    @card = Flashcard.find(params[:id])
     @card.destroy
     redirect_to :flashcards
   end
@@ -63,6 +53,10 @@ before_action :authenticate_user_of_flashcard, except: [:new, :create, :index]
 
   def flashcard_params
     params.permit(:front, :back)
+  end
+
+  def find_card
+    @card = Flashcard.find(params[:id])
   end
 
 end
