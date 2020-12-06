@@ -9,12 +9,16 @@
  StackOverflow
  etc..
 
+## Setting up
+
+ To use this app, just clone, run 'bundle install', 'rails db:migrate', 'rails db:seed' and then start the server with 'rails s'.
+
 ## Signing Up
 
 Signing up for an account is as easy as can be. Sign up using a unique username and password or you can login with your GitHub credentials. Your a developer. You better have a GitHub.
 
 ## Usage
-This is CLI should be used by anyone who wants to learn. If you have a passion for gaining knowledge and learning new things than this is for you. The program updates every week day with new information. You can learn 4 new things everyday. The instructions for use are very simple. You run the file, make a selection on and then you will get a return of your selection.
+This is app should be used by any developer that wants ease and access while programming. Open your IDE, Open Devtop, and then get to work. Everything you will need while coding will be on Devtop.
 
 
 ## License
