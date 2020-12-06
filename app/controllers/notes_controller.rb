@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
 before_action :redirect_if_not_logged_in
 before_action :authenticate_user_of_note, except: [:new, :create, :index]
+before_action :find_note, only: [:show, :edit, :update, :destroy]
 layout "note-layout"
 
   def index
@@ -26,13 +27,7 @@ layout "note-layout"
     end
   end
 
-
-  def show
-    @note = Note.find(params[:id])
-  end
-
   def update
-    @note = Note.find(params[:id])
     if @note.update(note_params)
       redirect_to '/notes'
     else
@@ -40,12 +35,7 @@ layout "note-layout"
     end
   end
 
-  def edit
-    @note = Note.find(params[:id])
-  end
-
   def destroy
-    @note = Note.find(params[:id])
     @note.destroy
     redirect_to :notes
   end
@@ -67,6 +57,10 @@ layout "note-layout"
     def dynamic_welcome
       greeting = ['Jot it down!', 'Sshhhh Your notes are sleeping!', 'Note it.', 'You are about to forget hurry!']
       @dynamic_welcome = greeting.sample(1).join(', ')
+    end
+
+    def find_note
+      @note = Note.find(params[:id])
     end
 
 end
