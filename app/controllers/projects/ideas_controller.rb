@@ -1,5 +1,5 @@
 class Projects::IdeasController < ApplicationController
-
+before_action :redirect_if_not_logged_in
   def create
     @idea = Idea.new(idea_params)
     @idea.user_id = current_user.id
