@@ -1,11 +1,6 @@
 class SessionsController < ApplicationController
-
-  def new
-    dynamic_background
-    if current_user
-      redirect_to '/devtop', notice: "You are already Logged in!"
-    end
-  end
+before_action :redirect_already_logged_in, only: [:new]
+before_action :dynamic_background, only: [:new]
 
   def github_login
     username = auth_hash['info']['name']
@@ -33,7 +28,7 @@ class SessionsController < ApplicationController
   end
 
   private
-  
+
   def dynamic_background
     @backgroundimg = ["https://rb.gy/d2bjqr", "https://rb.gy/93exoq", "https://rb.gy/axbchi", "https://rb.gy/ypujiv" ].sample(1).join(', ')
   end
