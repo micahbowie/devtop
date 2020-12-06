@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+before_action :redirect_already_logged_in, only: [:new]
+before_action :dynamic_background, only: [:new]
 
   def new
     @user = User.new
-    dynamic_background
   end
 
   def create
