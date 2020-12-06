@@ -1,0 +1,12 @@
+<br> <br>
+<div class="project-main-container">
+  <h1><%= @project.name %> Projects </h1>
+  <% @ideas.each do |idea| %>
+  <br>
+  <div class="idea-container">
+      <p><%= idea.idea_content %></p>
+  </div>
+  <br>
+      <% end %>
+    <%= link_to "Create a new idea!", :new_project_idea %>
+  </div>

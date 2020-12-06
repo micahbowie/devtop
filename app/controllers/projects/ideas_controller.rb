@@ -3,9 +3,8 @@ class Projects::IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     @idea.user_id = current_user.id
-    byebug
     if @idea.save
-      redirect_to :project
+      redirect_to project_path(@idea.project_id)
     else
       render 'new'
     end
