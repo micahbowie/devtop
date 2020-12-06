@@ -1,13 +1,6 @@
 class ThatlabsController < ApplicationController
 before_action :redirect_if_not_logged_in
-
-  def index
-    @questions = Question.search(params[:search])
-  end
-
-  def find
-    @questions = Question.search(params[:search])
-  end
+before_action :find_question, only: [:index, :find]
 
   def create_answer
     @the_question = Question.find_by(:id => params[:id])
@@ -23,4 +16,10 @@ before_action :redirect_if_not_logged_in
     end
   end
 
+
+private
+
+  def find_question
+    @questions = Question.search(params[:search])
+  end
 end
