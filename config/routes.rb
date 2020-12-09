@@ -37,13 +37,14 @@ Rails.application.routes.draw do
   #answer routes
   post 'saveanswer/:id', to: 'thatlabs#create_answer'
 
+  # idea routes
+  scope :projects, module: 'projects', as: 'project' do
+    resources :ideas, only: [:new, :create, :index, :show]
+  end
+  
   # project routes
   resources :projects, only: [:show, :index]
 
-  # idea routes
-  scope :projects, module: 'projects', as: 'project' do
-    resources :ideas, only: [:new, :create, :index]
-  end
 
 
 end
