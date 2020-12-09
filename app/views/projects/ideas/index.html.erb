@@ -1,0 +1,27 @@
+<div class="form-container">
+  <h1>ALL ideas!</h1>
+  <h5>Here are all ideas for every project</h5>
+
+  <br>
+    <% @cli_ideas.each do |idea| %>
+      <div class="cli-container">
+        <%= link_to idea.idea_content, project_idea_path(idea.id) %>
+      </div>
+      <br>
+    <% end %>
+  <br>  <br>
+    <% @sinatra_ideas.each do |idea| %>
+      <div class="sinatra-container">
+        <%= link_to idea.idea_content, project_idea_path(idea.id) %>
+        <br>
+      </div>
+    <% end %>
+  <br>  <br>
+    <% @rails_ideas.each do |idea| %>
+      <div class="rails-container">
+        <%= link_to idea.idea_content, project_idea_path(idea.id) %>
+        <br>
+      </div>
+    <% end %>
+
+</div>
