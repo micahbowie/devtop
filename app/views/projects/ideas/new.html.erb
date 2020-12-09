@@ -2,6 +2,16 @@
   <div class="form-container">
     <h2>Create a new idea!</h2>
     <br>
+    <div class="errors">
+      <% if flash[:messages]%>
+      <h3>Error(s):</h3>
+      <ul>
+        <% flash[:messages].each do |message|%>
+        <li><%= message %></li>
+      </ul>
+      <% end %>
+      <% end %>
+    </div>
     <%= form_with model: [:project, @idea] %>
       <%= check_box_tag(:project_id, "5", false) %>
       <%= label_tag(:CLI, "CLI project") %> |
