@@ -16,3 +16,4 @@ Refactor
 -add all css to the proper css files
 -add helpers to helper modules
 -fix home page loading time
+-add links to project and idea paths
