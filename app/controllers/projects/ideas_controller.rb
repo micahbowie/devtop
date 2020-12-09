@@ -8,7 +8,6 @@ layout "idea-layout"
       redirect_to project_path(@idea.project_id)
     else
       flash[:messages] = @idea.errors.full_messages
-      # byebug
       redirect_to :new_project_idea
     end
   end
