@@ -8,3 +8,43 @@
 .form-container h2{
   text-align:center;
 }
+.cli-container{
+  border-style: inset;
+  border-width: 3px;
+  background: LightBlue;
+}
+.rails-container{
+  border-style: inset;
+  border-width: 3px;
+  background: PowderBlue;
+}
+.sinatra-container{
+  border-style: inset;
+  border-width: 3px;
+  background: LightSkyBlue;
+}
+
+.project-idea-navbar{
+  margin-left: 60px;
+}
+.project-idea-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.project-idea-navbar ul li{
+  float: left;
+  background-color: white;
+  border-style: outset;
+}
+
+.project-idea-navbar ul li a{
+  display: block;
+ color: black;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+.errors{
+  color: red;
+}
